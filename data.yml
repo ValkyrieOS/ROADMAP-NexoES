@@ -4,18 +4,23 @@ phases:
       - name: Canales para hablar con todos de cualquier categoría y cosa
         status: in-progress
         assigned_users: ["Its_edurneee", "Sebas"]
+        user_limit: 2
       - name: Canales de voz automáticos con el bot
         status: pending
         assigned_users: []
+        user_limit: 1
       - name: Canales para el staff útiles para la organización
         status: in-progress
         assigned_users: ["Its_edurneee", "Sebas"]
+        user_limit: 2
       - name: Canales básicos para divertirse
         status: in-progress
         assigned_users: ["Its_edurneee", "Sebas"]
+        user_limit: 3
       - name: Roles para cada comunidad autónoma
         status: in-progress
         assigned_users: ["Its_edurneee", "Sebas"]
+        user_limit: 2
     current: true
 
   - name: BETA
@@ -23,10 +28,13 @@ phases:
       - name: Sistema de economía medio formado
         status: pending
         assigned_users: []
+        user_limit: 4
       - name: Categorías separadas por cada comunidad autónoma
         status: pending
         assigned_users: []
+        user_limit: 5
       - name: Canales para sorteos y quedadas con embeds
         status: pending
         assigned_users: []
+        user_limit: 3
     current: false

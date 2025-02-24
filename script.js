@@ -19,7 +19,7 @@ async function renderRoadmap() {
     const data = await loadRoadmapData();
     const container = document.getElementById('roadmap-container');
 
-    data.phases.forEach(phase => {
+    data.phases.forEach((phase, index) => {
         const progress = calculatePhaseProgress(phase.features);
         const phaseElement = document.createElement('div');
         phaseElement.className = `phase ${phase.current ? 'current-phase' : ''} ${progress.percent === 0 ? 'phase-pending' : ''}`;
@@ -61,7 +61,8 @@ async function renderRoadmap() {
 
             const assignedUsers = document.createElement('div');
             assignedUsers.className = 'assigned-users';
-            assignedUsers.innerHTML = `<strong>Asignado a:</strong> ${feature.assigned_users.length > 0 ? feature.assigned_users.join(', ') : 'No hay usuarios asignados'}`;
+            const capacityStatus = feature.assigned_users.length >= feature.user_limit ? '<span class="capacity-full">Capacidad llena</span>' : '';
+            assignedUsers.innerHTML = `<strong>Asignado a:</strong> ${feature.assigned_users.length > 0 ? feature.assigned_users.join(', ') : 'No hay usuarios asignados'} <span class="user-limit">(${feature.assigned_users.length}/${feature.user_limit})</span> ${capacityStatus}`;
 
             featureInfo.appendChild(featureName);
             featureInfo.appendChild(assignedUsers);
@@ -80,6 +81,13 @@ async function renderRoadmap() {
         phaseElement.appendChild(progressBar);
         phaseElement.appendChild(featureList);
         container.appendChild(phaseElement);
+
+        // Add separator after ALPHA phase
+        if (phase.name === 'ALPHA') {
+            const separator = document.createElement('div');
+            separator.className = 'phase-separator';
+            container.appendChild(separator);
+        }
     });
 }
 
