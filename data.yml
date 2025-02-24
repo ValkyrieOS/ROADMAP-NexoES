@@ -1,0 +1,32 @@
+phases:
+  - name: ALPHA
+    features:
+      - name: Canales para hablar con todos de cualquier categoría y cosa
+        status: in-progress
+        assigned_users: ["Its_edurneee", "Sebas"]
+      - name: Canales de voz automáticos con el bot
+        status: pending
+        assigned_users: []
+      - name: Canales para el staff útiles para la organización
+        status: in-progress
+        assigned_users: ["Its_edurneee", "Sebas"]
+      - name: Canales básicos para divertirse
+        status: in-progress
+        assigned_users: ["Its_edurneee", "Sebas"]
+      - name: Roles para cada comunidad autónoma
+        status: in-progress
+        assigned_users: ["Its_edurneee", "Sebas"]
+    current: true
+
+  - name: BETA
+    features:
+      - name: Sistema de economía medio formado
+        status: pending
+        assigned_users: []
+      - name: Categorías separadas por cada comunidad autónoma
+        status: pending
+        assigned_users: []
+      - name: Canales para sorteos y quedadas con embeds
+        status: pending
+        assigned_users: []
+    current: false

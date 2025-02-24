@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.phase {
+    background: rgba(42, 42, 42, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.phase:hover {
+    transform: translateY(-5px) scale(1.02);
+    border: 1px solid rgba(74, 158, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(74, 158, 255, 0.2);
+}
+
+.feature-item {
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.feature-item:hover {
+    background: rgba(58, 58, 58, 0.8);
+    transform: translateX(8px);
+    border: 1px solid rgba(74, 158, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+    background: rgba(51, 51, 51, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    height: 12px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    background: linear-gradient(45deg, #4a9eff, #6d5acd);
+    height: 100%;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: shimmer 2s infinite linear;
+    background-size: 200% 100%;
+    box-shadow: 0 0 15px rgba(74, 158, 255, 0.4);
+    border-radius: 10px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #4a9eff, #6d5acd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 10px rgba(74, 158, 255, 0.5); }
+    to { text-shadow: 0 0 20px rgba(109, 90, 205, 0.8); }
+}
+
+.phase-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #4a9eff;
+    transition: color 0.3s ease;
+}
+
+.phase:hover .phase-title {
+    color: #6d5acd;
+}
+
+.feature-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feature-name {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover .feature-name {
+    color: #4a9eff;
+}
+
+.assigned-users {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.assigned-users::before {
+    content: '👥';
+    font-size: 1rem;
+}
+
+.feature-status {
+    margin-left: auto;
+    padding: 0.35rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.status-completed {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.status-in-progress {
+    background-color: rgba(241, 196, 15, 0.2);
+    color: #f1c40f;
+    border: 1px solid rgba(241, 196, 15, 0.3);
+}
+
+.status-pending {
+    background-color: rgba(149, 165, 166, 0.2);
+    color: #95a5a6;
+    border: 1px solid rgba(149, 165, 166, 0.3);
+}
+
+.current-phase {
+    border: 2px solid rgba(74, 158, 255, 0.3);
+    box-shadow: 0 0 40px rgba(74, 158, 255, 0.1);
+    position: relative;
+}
+
+.current-phase::before {
+    content: 'Current Phase';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(74, 158, 255, 0.9);
+    padding: 0.35rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+}
+
+.progress-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #888;
+    margin-top: 0.75rem;
+}
+
+.progress-number {
+    font-weight: bold;
+    color: #4a9eff;
+    font-size: 1.125rem;
+    transition: color 0.3s ease;
+}
+
+.phase:hover .progress-number {
+    color: #6d5acd;
+}
+.feature-list {
+    list-style: none;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.feature-status {
+    margin-left: auto;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+}
+
+.status-completed {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.status-in-progress {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.status-pending {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.current-phase {
+    border: 2px solid #4a9eff;
+    position: relative;
+}
+
+.current-phase::before {
+    content: 'Current Phase';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4a9eff;
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+}
+.feature-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feature-name {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.assigned-users {
+    font-size: 0.875rem;
+    color: #b0b0b0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.assigned-users::before {
+    content: '👥';
+    font-size: 1rem;
+}
+.feature-status {
+    margin-left: auto;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+}
+
+.status-completed {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.status-in-progress {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.status-pending {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.current-phase {
+    border: 2px solid #4a9eff;
+    position: relative;
+}
+
+.current-phase::before {
+    content: 'Current Phase';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4a9eff;
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+}
