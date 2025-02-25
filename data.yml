@@ -21,6 +21,36 @@ phases:
         status: in-progress
         assigned_users: ["Its_edurneee", "Sebas"]
         user_limit: 2
+      - name: Sistema de bienvenida automatizado
+        status: pending
+        assigned_users: []
+        user_limit: 2
+        new: true # Etiqueta "new: true" añadida
+      - name: Canales de anuncios y actualizaciones
+        status: pending
+        assigned_users: []
+        user_limit: 2
+        new: true # Etiqueta "new: true" añadida
+      - name: Sistema de moderación básica
+        status: pending
+        assigned_users: []
+        user_limit: 2
+        new: true # Etiqueta "new: true" añadida
+      - name: Canales de sugerencias
+        status: pending
+        assigned_users: []
+        user_limit: 2
+        new: true # Etiqueta "new: true" añadida
+      - name: Personalización visual del servidor
+        status: pending
+        assigned_users: []
+        user_limit: 2
+        new: true # Etiqueta "new: true" añadida
+      - name: Canales de recursos o preguntas frecuentes
+        status: pending
+        assigned_users: []
+        user_limit: 2
+        new: true # Etiqueta "new: true" añadida
     current: true
 
   - name: BETA
@@ -29,12 +59,30 @@ phases:
         status: pending
         assigned_users: []
         user_limit: 4
+        new: true # Etiqueta "new: true" añadida
       - name: Categorías separadas por cada comunidad autónoma
         status: pending
         assigned_users: []
         user_limit: 5
+        new: true # Etiqueta "new: true" añadida
       - name: Canales para sorteos y quedadas con embeds
         status: pending
         assigned_users: []
         user_limit: 3
+        new: true # Etiqueta "new: true" añadida
+      - name: Sistema de niveles por actividad en el servidor
+        status: pending
+        assigned_users: []
+        user_limit: 5
+        new: true # Etiqueta "new: true" añadida
+      - name: Sistema de recompensas por niveles y roles especiales
+        status: pending
+        assigned_users: []
+        user_limit: 4
+        new: true # Etiqueta "new: true" añadida
+      - name: Eventos programados con recordatorios y gestión automática
+        status: pending
+        assigned_users: []
+        user_limit: 3
+        new: true # Etiqueta "new: true" añadida
     current: false
